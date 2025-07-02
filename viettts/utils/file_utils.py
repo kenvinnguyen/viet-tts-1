@@ -5,7 +5,6 @@ import soundfile
 import numpy as np
 from glob import glob
 from loguru import logger
-from huggingface_hub import snapshot_download
 
 from viettts.utils.vad import get_speech
 
@@ -101,5 +100,3 @@ def load_voices(voice_dir: str):
     return voice_name_map
 
 
-def download_model(save_dir: str):
-    snapshot_download(repo_id="dangvansam/viet-tts", local_dir=save_dir)
