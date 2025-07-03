@@ -5,7 +5,7 @@ import soundfile
 import numpy as np
 from glob import glob
 from loguru import logger
-from huggingface_hub import hf_hub_download
+from huggingface_hub import snapshot_download
 
 from viettts.utils.vad import get_speech
 
@@ -102,7 +102,7 @@ def load_voices(voice_dir: str):
 
 
 def download_model(save_dir: str):
-    hf_hub_download(
+    snapshot_download(
     repo_id="dangvansam/viet-tts",
     local_dir="pretrained-models",
     local_dir_use_symlinks=False  # ⚠️ BẮT BUỘC với bản 0.30 trở lên nếu muốn ghi đè nội dung thật
